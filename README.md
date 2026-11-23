@@ -3,7 +3,11 @@
 “한국의 NPU는 무엇이고, 미국의 AI 반도체와 어떻게 다른가?”를 일반인에게 설명하는 한국어 인터랙티브 웹사이트입니다.
 **자료 기준일: 2026-11-22** (`src/data/meta.ts`의 `DATA_AS_OF`)
 
-## 실행
+## 사이트 주소
+
+**https://1j1ne.github.io/seoulicon/** — `main` 브랜치에 push하면 GitHub Actions가 자동으로 빌드해 GitHub Pages에 배포합니다(`.github/workflows/deploy.yml`).
+
+## 로컬 실행
 
 ```bash
 npm install
