@@ -61,7 +61,7 @@ function Chip({ autoRotate, showLabels }: { autoRotate: boolean; showLabels: boo
       {showLabels && (
         <>
           <Html position={[0, 0.6, 0]} center>
-            <div className="label3d">연산 칩(다이)</div>
+            <div className="label3d">연산 칩 다이 (NPU)</div>
           </Html>
           <Html position={[1.55, 0.62, 0]} center>
             <div className="label3d">HBM3 스택 ×2</div>

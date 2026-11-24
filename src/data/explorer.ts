@@ -132,7 +132,7 @@ export const levels: Level[] = [
       { text: 'TSMC 5 nm 공정', claim: 'fact', src: ['furiosa-hotchips'] },
     ],
     parts: [
-      { id: 'pkg-die', name: '연산 칩(다이)', role: 'compute', what: '실제 계산 회로가 새겨진 실리콘 조각입니다.', why: 'AI 모델의 곱셈·덧셈을 수행하는 핵심입니다.' },
+      { id: 'pkg-die', name: '연산 칩 다이 (NPU)', role: 'compute', what: '실제 계산 회로가 새겨진 실리콘 조각으로, 이것이 NPU입니다.', why: 'AI 모델의 곱셈·덧셈을 수행하는 핵심입니다.' },
       { id: 'pkg-hbm', name: 'HBM3 스택 ×2', role: 'memory', what: 'D램을 여러 층 쌓아 칩 바로 옆에 붙인 고대역 메모리입니다.', why: '거리가 짧고 통로가 넓어 모델 숫자를 아주 빨리 읽습니다.' },
       { id: 'pkg-interposer', name: '인터포저', role: 'link', what: '칩과 HBM을 수천 가닥 미세 배선으로 잇는 얇은 실리콘 판입니다.', why: '일반 기판으로는 이만큼 촘촘한 배선을 만들 수 없습니다.' },
       { id: 'pkg-sub', name: '패키지 기판', role: 'package', what: '전체를 받치고 카드 기판과 연결하는 바닥판입니다.', why: '부품을 보호하고 전기·신호를 카드로 전달합니다.' },

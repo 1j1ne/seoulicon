@@ -6,11 +6,12 @@ const ChipModel = lazy(() => import('../three/ChipModel'));
 
 export function ChipFallback2D() {
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="RNGD 패키지 2D 도식: 가운데 연산 칩, 양옆 HBM3 2개, 아래 기판">
+    <svg viewBox="0 0 400 300" role="img" aria-label="RNGD 패키지 2D 도식: 가운데 연산 칩(NPU), 양옆 HBM3 2개, 아래 기판">
       <rect x="20" y="40" width="360" height="220" rx="10" fill="#1f3b34" stroke="#2dd4bf" strokeOpacity=".4" />
       <rect x="45" y="60" width="310" height="180" rx="6" fill="#374151" />
       <rect x="140" y="80" width="120" height="140" rx="4" fill="#0f172a" stroke="#2dd4bf" />
       <text x="200" y="155" textAnchor="middle" fill="#e2e8f0" fontSize="15">연산 칩</text>
+      <text x="200" y="175" textAnchor="middle" fill="#2dd4bf" fontSize="13">(NPU)</text>
       {[
         [62, 120],
         [273, 120],

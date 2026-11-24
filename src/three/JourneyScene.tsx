@@ -29,6 +29,7 @@ function Mat({ id, color, metal = 0.25, rough = 0.6, opacity = 1, emissive }: { 
       metalness={metal}
       roughness={rough}
       transparent={opacity < 1}
+      depthWrite={opacity >= 1}
       opacity={opacity}
       emissive={on ? '#fde047' : emissive ?? '#000000'}
       emissiveIntensity={on ? 0.6 : emissive ? 0.9 : 0}
@@ -149,9 +150,9 @@ function TargetRack({ serverRef, cardRef, shroudRef, overlayRef, shroudMats }: R
           <meshStandardMaterial color="#0e7490" emissive="#22d3ee" emissiveIntensity={0.35} metalness={0.5} roughness={0.4} />
         </mesh>
       ))}
-      <Bx p={[x, RACK.h - 0.01, z]} s={[RACK.w, 0.02, RACK.d]} color="#111827" />
-      <Bx p={[x - RACK.w / 2 + 0.005, RACK.h / 2, z]} s={[0.01, RACK.h, RACK.d]} color="#1f2937" opacity={0.35} />
-      <Bx p={[x + RACK.w / 2 - 0.005, RACK.h / 2, z]} s={[0.01, RACK.h, RACK.d]} color="#1f2937" opacity={0.35} />
+      <Bx p={[x, RACK.h - 0.011, z]} s={[RACK.w - 0.012, 0.02, RACK.d - 0.012]} color="#111827" />
+      <Bx p={[x - RACK.w / 2 + 0.03, RACK.h / 2, z]} s={[0.006, RACK.h - 0.04, RACK.d - 0.1]} color="#1f2937" opacity={0.35} />
+      <Bx p={[x + RACK.w / 2 - 0.03, RACK.h / 2, z]} s={[0.006, RACK.h - 0.04, RACK.d - 0.1]} color="#1f2937" opacity={0.35} />
       <Bx id="rack-switch" p={[x, RACK.h - 0.12, SERVER_CZ]} s={[SERVER.w, U - 0.004, SERVER.d * 0.7]} color={ROLE_COLOR.link} />
       <Bx id="rack-power" p={[x + 0.25, RACK.h / 2, z - RACK.d / 2 + 0.06]} s={[0.04, RACK.h * 0.85, 0.05]} color="#a16207" />
       <Bx id="rack-power" p={[x - 0.25, RACK.h / 2, z - RACK.d / 2 + 0.06]} s={[0.04, RACK.h * 0.85, 0.05]} color="#a16207" />
@@ -171,7 +172,7 @@ function ClosedServer({ y }: { y: number }) {
       <Bx id="rack-server" p={[0, y + SERVER.h / 2, SERVER_CZ]} s={[SERVER.w, SERVER.h, SERVER.d]} color="#374151" metal={0.5} rough={0.45} />
       <Bx p={[0, y + SERVER.h / 2, SERVER_FRONT_Z + 0.004]} s={[SERVER.w + 0.04, SERVER.h, 0.008]} color="#1e293b" metal={0.4} />
       {[-0.15, -0.05, 0.05, 0.15].map((dx) => (
-        <Bx key={dx} p={[dx, y + SERVER.h / 2, SERVER_FRONT_Z + 0.01]} s={[0.07, SERVER.h * 0.7, 0.004]} color="#0f172a" />
+        <Bx key={dx} p={[dx, y + SERVER.h / 2, SERVER_FRONT_Z + 0.0105]} s={[0.07, SERVER.h * 0.7, 0.004]} color="#0f172a" />
       ))}
       <Bx p={[0.2, y + SERVER.h * 0.8, SERVER_FRONT_Z + 0.012]} s={[0.008, 0.008, 0.004]} color="#22d3ee" />
     </group>
@@ -200,8 +201,8 @@ function OpenServer({ cardRef, shroudRef, overlayRef, shroudMats }: Omit<Refs, '
   return (
     <group>
       <Bx p={[0, y0 + 0.003, SERVER_CZ]} s={[SERVER.w, 0.006, SERVER.d]} color="#4b5563" metal={0.6} rough={0.4} />
-      <Bx p={[-SERVER.w / 2 + 0.003, y0 + SERVER.h / 2, SERVER_CZ]} s={[0.006, SERVER.h, SERVER.d]} color="#4b5563" metal={0.6} />
-      <Bx p={[SERVER.w / 2 - 0.003, y0 + SERVER.h / 2, SERVER_CZ]} s={[0.006, SERVER.h, SERVER.d]} color="#4b5563" metal={0.6} />
+      <Bx p={[-SERVER.w / 2 + 0.003, y0 + SERVER.h / 2 + 0.001, SERVER_CZ]} s={[0.006, SERVER.h - 0.002, SERVER.d - 0.002]} color="#4b5563" metal={0.6} />
+      <Bx p={[SERVER.w / 2 - 0.003, y0 + SERVER.h / 2 + 0.001, SERVER_CZ]} s={[0.006, SERVER.h - 0.002, SERVER.d - 0.002]} color="#4b5563" metal={0.6} />
       <Bx p={[0, y0 + SERVER.h / 2, SERVER_FRONT_Z + 0.004]} s={[SERVER.w + 0.04, SERVER.h, 0.008]} color="#1e293b" metal={0.4} />
       {/* 팬 벽 */}
       <Bx id="srv-fan" p={[0, y0 + 0.07, SERVER_FRONT_Z - 0.1]} s={[SERVER.w - 0.02, 0.13, 0.05]} color="#1f2937" />
@@ -243,7 +244,7 @@ function SimpleCard() {
     <group>
       <Bx id="srv-card" p={[0, 0, 0.012]} s={[CARD.len, CARD.h, CARD.t - 0.006]} color="#20242c" metal={0.6} rough={0.35} />
       <Bx p={[0, 0, -0.006]} s={[CARD.len, CARD.h, 0.0016]} color="#0f2a1f" />
-      <Bx p={[CARD.len / 2 + 0.001, 0.004, 0.012]} s={[0.002, CARD.h + 0.012, 0.036]} color="#9ca3af" metal={0.8} />
+      <Bx p={[CARD.len / 2 + 0.0015, 0.004, 0.012]} s={[0.002, CARD.h + 0.012, 0.036]} color="#9ca3af" metal={0.8} />
     </group>
   );
 }
@@ -272,7 +273,7 @@ function DetailedCard({ shroudRef, overlayRef, shroudMats }: Omit<Refs, 'serverR
       {/* PCIe 단자 */}
       <Bx id="brd-edge" p={[0.02, -CARD.h / 2 - 0.005, 0]} s={[0.089, 0.01, 0.0016]} color="#d4a017" metal={0.9} rough={0.2} />
       {/* I/O 브래킷 */}
-      <Bx p={[CARD.len / 2 + 0.001, 0.004, 0.012]} s={[0.002, CARD.h + 0.012, 0.036]} color="#9ca3af" metal={0.85} rough={0.3} />
+      <Bx p={[CARD.len / 2 + 0.0015, 0.004, 0.012]} s={[0.002, CARD.h + 0.012, 0.036]} color="#9ca3af" metal={0.85} rough={0.3} />
       {/* 뒷판 */}
       <Bx p={[0, 0, -0.0025]} s={[CARD.len - 0.01, CARD.h - 0.008, 0.0016]} color="#30343c" metal={0.7} rough={0.4} />
       {/* 전원 회로 */}
@@ -313,7 +314,7 @@ function DetailedCard({ shroudRef, overlayRef, shroudMats }: Omit<Refs, 'serverR
         </mesh>
         <FinStack pts={fins} regMat={regMat} />
         {/* 덮개 테두리(가운데는 열려 핀이 보임) */}
-        {[CARD.h / 2 - 0.006, -CARD.h / 2 + 0.006].map((yy) => (
+        {[CARD.h / 2 - 0.0075, -CARD.h / 2 + 0.0075].map((yy) => (
           <mesh key={yy} position={[-0.005, yy, CARD.t - 0.004]}>
             <boxGeometry args={[CARD.len - 0.012, 0.012, 0.002]} />
             <meshStandardMaterial ref={regMat} color="#22262e" metalness={0.5} roughness={0.45} transparent />
@@ -321,12 +322,12 @@ function DetailedCard({ shroudRef, overlayRef, shroudMats }: Omit<Refs, 'serverR
         ))}
         {[-(CARD.len / 2) + 0.012, CARD.len / 2 - 0.018].map((xx) => (
           <mesh key={xx} position={[xx, 0, CARD.t / 2 + 0.002]}>
-            <boxGeometry args={[0.008, CARD.h, CARD.t - 0.006]} />
+            <boxGeometry args={[0.008, CARD.h - 0.0012, CARD.t - 0.006]} />
             <meshStandardMaterial ref={regMat} color="#22262e" metalness={0.5} roughness={0.45} transparent />
           </mesh>
         ))}
-        <mesh position={[-0.005, CARD.h / 2 - 0.001, CARD.t / 2]}>
-          <boxGeometry args={[CARD.len - 0.012, 0.002, CARD.t - 0.004]} />
+        <mesh position={[-0.005, CARD.h / 2 + 0.0004, CARD.t / 2]}>
+          <boxGeometry args={[CARD.len - 0.02, 0.002, CARD.t - 0.004]} />
           <meshStandardMaterial ref={regMat} color="#22262e" metalness={0.5} roughness={0.45} transparent />
         </mesh>
       </group>
@@ -400,7 +401,12 @@ function Rig({ progress, azimuth, refs, collapsed }: { progress: MutableRefObjec
     if (refs.serverRef.current) refs.serverRef.current.position.z = slide;
     if (refs.cardRef.current) refs.cardRef.current.position.y = cardCY() + lift;
     if (refs.shroudRef.current) refs.shroudRef.current.position.z = open * 0.11;
-    refs.shroudMats.current.forEach((m) => { m.opacity = 1 - open * 0.88; m.depthWrite = open < 0.5; });
+    refs.shroudMats.current.forEach((m) => {
+      const fading = open > 0.001;
+      if (m.transparent !== fading) { m.transparent = fading; m.needsUpdate = true; }
+      m.opacity = 1 - open * 0.88;
+      m.depthWrite = open < 0.5;
+    });
     if (refs.overlayRef.current) refs.overlayRef.current.visible = eff > 4.15;
 
     // 카메라 키프레임 보간
@@ -459,7 +465,7 @@ function Labels({ step, show }: { step: number; show: boolean }) {
       <Label show={lbl(3)} id="brd-edge" p={cw(0.02, -CARD.h / 2 - 0.012, 0)} text="PCIe Gen5 x16 단자" />
       <Label show={lbl(3)} p={cw(CARD.len / 2 + 0.004, 0.06, 0.012)} text="I/O 브래킷" />
 
-      <Label show={lbl(4)} id="pkg-die" p={pk(0, 0.016, dz)} text="연산 칩(다이)" />
+      <Label show={lbl(4)} id="pkg-die" p={pk(0, 0.016, dz)} text="연산 칩 다이 (NPU)" />
       <Label show={lbl(4)} id="pkg-hbm" p={pk(0.0185, -0.009, dz)} text="HBM3 스택" />
       <Label show={lbl(4)} id="pkg-interposer" p={pk(-0.0185, 0.017, PKG.sub[2] + PKG.ip[2])} text="인터포저" />
       <Label show={lbl(4)} id="pkg-sub" p={pk(-0.028, -0.024, PKG.sub[2])} text="패키지 기판" />
