@@ -8,7 +8,7 @@ export default function Conclusion() {
   return (
     <section id="conclusion" className="section concl" aria-labelledby="concl-title">
       <div className="wrap">
-        <p className="eyebrow">07 · 마무리</p>
+        <p className="eyebrow">08 · 마무리</p>
         <h2 id="concl-title">그래서 한국 NPU를 어떻게 봐야 할까?</h2>
         <p className="lead">
           “한국이 이긴다 / 진다”보다 “어떤 제품이, 어떤 고객에게, 어떤 조건에서 맞는가”로 보는 것이 정확합니다. 아래는 {DATA_AS_OF} 기준 공개 자료로 확인한 내용입니다.

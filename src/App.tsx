@@ -8,6 +8,7 @@ import Journey from './sections/Journey';
 import Compare from './sections/Compare';
 import Timeline from './sections/Timeline';
 import Challengers from './sections/Challengers';
+import SdkProof from './sections/SdkProof';
 import Conclusion from './sections/Conclusion';
 
 const NAV = [
@@ -17,6 +18,7 @@ const NAV = [
   { id: 'compare', label: '한국 vs 미국' },
   { id: 'timeline', label: '제작 과정' },
   { id: 'challengers', label: '도전 사례' },
+  { id: 'sdk', label: 'SDK 증명' },
   { id: 'conclusion', label: '마무리' },
 ];
 
@@ -105,6 +107,7 @@ export default function App() {
         <Compare />
         <Timeline />
         <Challengers />
+        <SdkProof />
         <Conclusion />
       </main>
       <Footer />

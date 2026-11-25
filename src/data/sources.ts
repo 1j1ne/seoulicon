@@ -421,6 +421,71 @@ export const sources: Record<string, Source> = {
     type: 'press',
   },
 
+  /* ───────── 자체 SDK·실증 사례 ───────── */
+  'rbln-quickstart': {
+    title: 'RBLN SDK Quick Start (rebel-compiler · RBLN Runtime · optimum-rbln · vllm-rbln)',
+    publisher: 'Rebellions (RBLN SDK 문서)',
+    url: 'https://docs.rbln.ai/latest/getting_started/quick_start.html',
+    date: '2026 열람',
+    type: 'official',
+  },
+  'rbln-vllm-doc': {
+    title: 'RBLN vLLM: A vLLM Plugin for RBLN NPU',
+    publisher: 'Rebellions (RBLN SDK 문서)',
+    url: 'https://docs.rbln.ai/latest/software/model_serving/vllm_support/index.html',
+    date: '2026 열람',
+    type: 'official',
+  },
+  'rbln-optimum-pypi': {
+    title: 'optimum-rbln (PyPI) — rebel-compiler는 승인된 사용자에게만 제공',
+    publisher: 'PyPI',
+    url: 'https://pypi.org/project/optimum-rbln/',
+    date: '2026 열람',
+    type: 'official',
+  },
+  'rbln-forum': {
+    title: 'Rebellions Official Dev Forum',
+    publisher: 'Rebellions',
+    url: 'https://discuss.rebellions.ai/',
+    date: '2026 열람',
+    type: 'official',
+  },
+  'rbln-aramco-li': {
+    title: 'A proud milestone for Team Rebellions in the Kingdom of Saudi Arabia (Aramco SAIL 납품·PoC)',
+    publisher: 'Rebellions (LinkedIn)',
+    url: 'https://www.linkedin.com/posts/rebellions-ai_a-proud-milestone-for-team-rebellions-in-activity-7320242884618633216-rziI',
+    date: '2025-04',
+    type: 'official',
+  },
+  'skt-rbln-pilot-pr': {
+    title: 'SKT, 리벨리온과 ‘국산 AI 생태계’ 구축 나선다',
+    publisher: 'SK텔레콤 뉴스룸',
+    url: 'https://news.sktelecom.com/213376',
+    date: '2025-06-25',
+    type: 'official',
+  },
+  'skt-rbln-interview': {
+    title: '“국산 NPU로 풀스택 K-AI 완성에 기여할 것”… 리벨리온 김홍석 총괄 인터뷰',
+    publisher: 'SK텔레콤 뉴스룸',
+    url: 'https://news.sktelecom.com/217388',
+    date: '2025-12-10',
+    type: 'official',
+  },
+  'rbln-skt-14m': {
+    title: '리벨리온, SKT 주요 AI 서비스 4개에 자사 NPU 확대 적용… AI 트래픽 하루 1,400만 건 이상 소화',
+    publisher: 'Rebellions 보도자료',
+    url: 'https://kr.rebellions.ai/newsroom/rebellions_running_14000traffic_skt_commercialization/',
+    date: '2026-09-21',
+    type: 'official',
+  },
+  'skt-nv-rbln-mou': {
+    title: 'SKT-엔비디아-리벨리온, 한국형 소버린 AI 인프라 구축 협력',
+    publisher: 'SK텔레콤 뉴스룸',
+    url: 'https://news.sktelecom.com/232944',
+    date: '2026-11-09',
+    type: 'official',
+  },
+
   /* ───────── 벤치마크·일반 참고 ───────── */
   'mlc-v61': {
     title: 'Where the industry is investing: a look at MLPerf Inference v6.1',
