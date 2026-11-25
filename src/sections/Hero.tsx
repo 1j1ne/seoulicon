@@ -22,9 +22,6 @@ export default function Hero() {
             <p className="eyebrow" style={{ margin: 0 }}>먼저, NPU란?</p>
             <h2 className="npu-title">AI 계산만 하도록 만든 <span>전용 계산기</span></h2>
             <p className="small">
-              <b>비유</b> AI 계산이라는 한 가지 요리만 대량으로, 빠르고 적은 전기로 만들도록 설계된 전용 주방입니다.
-            </p>
-            <p className="small">
               <b>정의</b> NPU(Neural Processing Unit, 신경망 처리 장치)는 AI 모델의 핵심 계산인 행렬 곱셈·덧셈에 맞춰 회로를 특화한 반도체입니다.
             </p>
             <div className="npu-procs">
@@ -35,9 +32,6 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <p className="xs npu-caution">
-              <b>알아 둘 점</b> 이름은 회사마다 다릅니다 — Google은 TPU라고 부르지만 같은 종류의 AI 전용 칩입니다. 실제 성능은 제품과 쓰는 모델·조건에 따라 달라집니다.
-            </p>
             <p className="xs" style={{ margin: 0 }}>
               <a href="#process">질문을 보내고 처리 과정 보기 ↓</a> · <a href="#explore">실제 NPU 서버·칩을 3D로 보기 ↓</a>
             </p>

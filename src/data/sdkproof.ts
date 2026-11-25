@@ -12,7 +12,7 @@ export interface SdkPart {
 }
 
 export const sdkParts: SdkPart[] = [
-  { name: 'RBLN Compiler', does: 'PyTorch·TensorFlow 모델을 NPU용으로 변환·최적화', meaning: '모델을 처음부터 다시 만들 필요를 줄임', src: ['rbln-quickstart'] },
+  { name: 'RBLN (AI) Compiler', does: 'PyTorch·TensorFlow 모델을 NPU용으로 변환·최적화', meaning: '모델을 처음부터 다시 만들 필요를 줄임', src: ['rbln-quickstart'] },
   { name: 'RBLN Runtime', does: '변환된 모델을 NPU에서 실행', meaning: '기존 실행 코드를 RBLN API로 바꾸는 과정이 필요할 수 있음', src: ['rbln-quickstart'] },
   { name: 'Optimum RBLN', does: 'Hugging Face 모델의 컴파일·추론 지원', meaning: '지원 모델은 준비된 연동 경로로 옮길 수 있음', src: ['rbln-quickstart', 'rbln-optimum-pypi'] },
   { name: 'vLLM 연동', does: 'LLM을 서버로 실행하고 OpenAI 호환 API 제공', meaning: '기존 서비스와 연결하기 쉽게 지원', src: ['rbln-vllm-doc', 'rbln-quickstart'] },

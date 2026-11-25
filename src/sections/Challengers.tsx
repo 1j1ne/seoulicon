@@ -80,12 +80,11 @@ export default function Challengers() {
         </div>
 
         <div className="card ch-analysis">
-          <span className="ch-opinion">이 사이트의 분석 · 의견</span>
-          <h3 style={{ margin: '8px 0 6px' }}>가장 참고할 만한 사례: {analysis.pick}</h3>
-          <p className="small">{analysis.why}</p>
-          <p className="small" style={{ marginBottom: 6 }}><b>비슷한 성공을 거두려면 — 현실적인 순서</b></p>
-          <ol className="ch-steps">
-            {analysis.steps.map((s) => <li key={s} className="small">{s}</li>)}
+          <h3 style={{ margin: '0 0 12px' }}>비슷한 성공을 거두려면 필요한 순서</h3>
+          <ol className="ch-steps-strong">
+            {analysis.steps.map((s, i) => (
+              <li key={s}><span className="ch-step-no" aria-hidden="true">{i + 1}.</span><span>{s}</span></li>
+            ))}
           </ol>
           <p className="small" style={{ marginBottom: 0 }}><b>정리</b> {analysis.conclusion}</p>
         </div>

@@ -1,5 +1,5 @@
 import { useState, type KeyboardEvent } from 'react';
-import { Cite, Claim, ConceptBadge } from '../components/ui';
+import { Cite, Claim } from '../components/ui';
 import { PHASE_LABEL, processStages, timelineQA, type PhaseKind } from '../data/timeline';
 
 /* ───── 일반 흐름도 좌표 (길이는 실제 기간과 비례하지 않음) ───── */
@@ -133,15 +133,7 @@ export default function Timeline() {
       <div className="wrap">
         <p className="eyebrow">05 · 만들어지고 팔리는 과정</p>
         <h2 id="tl-title">AI 반도체는 어떻게 만들어져 팔릴까?</h2>
-        <p className="lead">
-          특정 회사가 아니라 AI 반도체 일반의 흐름입니다. 개발 → 생산·납품 → 고객 도입의 세 기간이 차례로 이어지면서도 일부는 겹쳐서 진행됩니다. 단계를 누르면 하는 일과 기간, 지연 요인이 나옵니다.
-        </p>
-
-        <div style={{ margin: '16px 0 10px' }}>
-          <ConceptBadge text="순서 개념도 — 상자 크기·간격은 실제 기간과 비례하지 않습니다" />
-        </div>
-
-        <div className="flow-layout">
+        <div className="flow-layout" style={{ marginTop: 16 }}>
           <div className="card flow-card">
             <div className="flow-scroll">
               <GeneralFlow sel={sel} onSel={setSel} />

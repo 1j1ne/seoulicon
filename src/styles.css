@@ -519,3 +519,7 @@ th, td { overflow-wrap: normal; word-break: keep-all; }
 .sdk-auto.a-auto { color: #86efac; border-color: #86efac88; }
 .sdk-auto.a-semi { color: #fde68a; border-color: #fde68a88; }
 .sdk-auto.a-manual { color: #f9a8d4; border-color: #f9a8d488; }
+.sdk-link { margin: 12px 0 10px; padding-top: 10px; border-top: 1px dashed var(--line-2); color: var(--accent); font-weight: 700; }
+.ch-steps-strong { list-style: none; padding: 0; margin: 0 0 16px; border-top: 1px solid var(--line); }
+.ch-steps-strong li { display: flex; gap: 14px; padding: 12px 2px; border-bottom: 1px solid var(--line); font-size: 17px; font-weight: 600; color: var(--text); line-height: 1.55; }
+.ch-step-no { flex: none; width: 1.2em; color: #fde68a; font-weight: 700; }
