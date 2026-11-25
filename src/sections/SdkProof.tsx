@@ -6,6 +6,7 @@ const AUTO_LABEL = { auto: '완전 자동', semi: '반자동', manual: '사람 �
 
 export default function SdkProof() {
   const [view, setView] = useState<'simple' | 'detail'>('simple');
+  const detail = view === 'detail';
   return (
     <section id="sdk" className="section" aria-labelledby="sdk-title">
       <div className="wrap">
@@ -31,7 +32,7 @@ export default function SdkProof() {
               {sdkParts.map((p) => (
                 <tr key={p.name}>
                   <td><b style={{ color: 'var(--text)' }}>{p.name}</b></td>
-                  <td>{p.does} <Cite ids={p.src} /></td>
+                  <td>{p.does} {detail && <Cite ids={p.src} />}</td>
                   <td>{p.meaning}</td>
                 </tr>
               ))}
@@ -53,7 +54,7 @@ export default function SdkProof() {
               <p className="small">{w.body}</p>
               <ul className="ch-facts">
                 {w.facts.map((f) => (
-                  <li key={f.text} className="small">{f.text} <Claim kind={f.claim} /> <Cite ids={f.src} /></li>
+                  <li key={f.text} className="small">{f.text} <Claim kind={f.claim} /> {detail && <Cite ids={f.src} />}</li>
                 ))}
               </ul>
             </article>
@@ -71,7 +72,7 @@ export default function SdkProof() {
               </div>
               <h4 style={{ margin: '6px 0' }}>{t.title}</h4>
               <p className="small">{t.body} <Claim kind={t.claim} /></p>
-              <Cite ids={t.src} />
+              {detail && <Cite ids={t.src} />}
             </li>
           ))}
         </ol>
